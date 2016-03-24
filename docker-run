@@ -1,0 +1,6 @@
+docker run -it --name exo-jitsi-meet \
+    -p 80:80 -p 443:443 -p 4443:4443 -p 5347:5347 -p 5222:5222 -p 3478:3478 --expose=3478 -p 4443:4443/udp \
+    pnedonosko/ubuntu-exo-jitsi-meet:latest
+
+#-p 10000-20000:10000-20000/udp -p 30000-60000:30000-60000/udp \
+    
