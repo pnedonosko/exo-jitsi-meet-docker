@@ -1,3 +1,5 @@
+#!/bin/sh
+
 unset DEBIAN_FRONTEND
 
 export LOG=/var/log/jitsi/jvb.log
@@ -13,6 +15,12 @@ if [ ! -f "$LOG" ]; then
 
 	touch $LOG && \
 	chown jvb:jitsi $LOG
+fi
+
+CONFIGURED=/.configured
+if [ ! -f "$CONFIGURED" ]; then
+    /configure.sh
+    touch $CONFIGURED
 fi
 
 cd /etc/init.d/

@@ -1,1 +1,1 @@
-docker build -t pnedonosko/ubuntu-exo-jitsi-meet:latest -t pnedonosko/ubuntu-exo-jitsi-meet:1.0.878-1 .
+docker build -t ubuntu-exo-jitsi-meet:latest -t ubuntu-exo-jitsi-meet:1.0.879-1 .
