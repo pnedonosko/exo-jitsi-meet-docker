@@ -20,13 +20,15 @@ RUN apt-get update && \
 	apt-get clean
 
 EXPOSE 80 443 4443 5347
-#5275 3478 3478/udp 4443/udp
-#EXPOSE 10000/udp 10001/udp 10002/udp 10003/udp 10004/udp 10005/udp 10006/udp 10007/udp 10008/udp 10009/udp 10010/udp
 EXPOSE 10000-10020/udp
-# 10000-20000/tcp
 
+# UI customization
+COPY src/interface_config.js /usr/share/exoplatform/jitsi-meet/
+COPY src/images /usr/share/exoplatform/jitsi-meet/images/
+
+# Config custmization
 COPY configure.sh /configure.sh
-#CMD /configure.sh
 
+# Run script
 COPY run.sh /run.sh
 CMD /run.sh
